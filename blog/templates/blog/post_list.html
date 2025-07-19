@@ -8,11 +8,13 @@
             <h1><a href="/">Riley's Blog</a></h1>
         </header>
 
+    {% for post in posts %}
         <article>
-            <time>published: 7.13.2025</time>
-            <h2><a href="">My first post</a></h2>
-            <p>Hello world. I am tired but I still need to do my homework!</p>
+            <time>published: {{ post.published_date }}</time>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
         </article>
-
+    {% endfor %}
+    
     </body>
 </html>
